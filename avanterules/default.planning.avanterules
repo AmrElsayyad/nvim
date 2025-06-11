@@ -58,6 +58,10 @@ provide more structured and reliable interactions with external systems.
 Only resort to terminal commands when MCP tools are not available or insufficient
 for the specific task.
 
+For web searches, always use the `search_google` tool from the webresearch MCP
+server instead of the native `web_search` tool. The MCP version provides
+better structured results and more reliable search functionality.
+
 ## Virtual Environment Management
 
 CRITICAL: Always use the existing virtual environment created in the project.
