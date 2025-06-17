@@ -10,47 +10,61 @@ return {
                     max_tokens = 8192,
                 },
             },
+            gemini = {
+                model = "gemini-2.0-flash",
+            },
             ollama = {
-                model = "qwen2.5-coder",
+                model = "qwen2.5-coder:3b",
                 timeout = 3000,
                 extra_request_body = {
                     options = {
-                        num_ctx = 2048,
+                        num_ctx = 4096,
                     },
                 },
             },
         },
         provider = "copilot",
-        auto_suggestions_provider = "ollama",
+        auto_suggestions_provider = "gemini",
         behaviour = {
             auto_suggestions = true,
         },
         suggestion = {
             debounce = 300,
         },
-        system_prompt = function()
+        system_prompt = function(opts)
             -- 1) Get your MCP hub prompt
             local hub = require("mcphub").get_hub_instance()
             local hub_prompt = hub and hub:get_active_servers_prompt() or ""
 
-            -- 2) Load the global editing rules
-            local rules_path = vim.fn.expand(
-                "~/.config/nvim/avanterules/default.editing.avanterules"
-            )
-            local file = io.open(rules_path, "r")
+            -- 2) Load mode-specific rules based on current mode
             local rules = ""
-            if file then
-                rules = file:read("*a")
-                file:close()
-            else
-                vim.notify(
-                    "Avante: could not read editing rules at " .. rules_path,
-                    vim.log.levels.WARN
+            if opts and opts.mode then
+                local rules_path = vim.fn.expand(
+                    "~/.config/nvim/avanterules/default."
+                        .. opts.mode
+                        .. ".avanterules"
                 )
+                local file = io.open(rules_path, "r")
+                if file then
+                    rules = file:read("*a")
+                    file:close()
+                else
+                    vim.notify(
+                        "Avante: could not read "
+                            .. opts.mode
+                            .. " rules at "
+                            .. rules_path,
+                        vim.log.levels.WARN
+                    )
+                end
             end
 
             -- 3) Combine and return
-            return hub_prompt .. "\n\n" .. rules
+            if rules ~= "" then
+                return hub_prompt .. "\n\n" .. rules
+            else
+                return hub_prompt
+            end
         end,
         custom_tools = function()
             return {
