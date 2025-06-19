@@ -26,7 +26,7 @@ return {
         provider = "copilot",
         auto_suggestions_provider = "gemini",
         behaviour = {
-            auto_suggestions = true,
+            auto_suggestions = false,
         },
         suggestion = {
             debounce = 300,
