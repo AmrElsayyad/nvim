@@ -62,6 +62,18 @@ For web searches, always use the `search_google` tool from the webresearch MCP
 server instead of the native `web_search` tool. The MCP version provides
 better structured results and more reliable search functionality.
 
+## Working Directory Management
+
+CRITICAL: Always ensure you know and use the correct project directory when
+executing tools. When starting a task:
+
+1. **Identify the project directory** at the beginning of the conversation
+2. **Always specify the full project path** when using tools that require a path
+3. **Never use '.' as a path** without explicitly knowing what directory you're in
+4. **When uncertain**, run `ls`, or ask the user to confirm the project's path
+
+Always work in the intended project directory, not any other directory.
+
 ## Virtual Environment Management
 
 CRITICAL: Always use the existing virtual environment created in the project.
