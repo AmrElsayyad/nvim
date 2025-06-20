@@ -31,32 +31,24 @@ return {
         suggestion = {
             debounce = 300,
         },
-        system_prompt = function(opts)
+        system_prompt = function()
             -- 1) Get your MCP hub prompt
             local hub = require("mcphub").get_hub_instance()
             local hub_prompt = hub and hub:get_active_servers_prompt() or ""
 
-            -- 2) Load mode-specific rules based on current mode
+            -- 2) Load default rules
             local rules = ""
-            if opts and opts.mode then
-                local rules_path = vim.fn.expand(
-                    "~/.config/nvim/avanterules/default."
-                        .. opts.mode
-                        .. ".avanterules"
+            local rules_path =
+                vim.fn.expand("~/.config/nvim/avanterules/default.avanterules")
+            local file = io.open(rules_path, "r")
+            if file then
+                rules = file:read("*a")
+                file:close()
+            else
+                vim.notify(
+                    "Avante: could not read rules at " .. rules_path,
+                    vim.log.levels.WARN
                 )
-                local file = io.open(rules_path, "r")
-                if file then
-                    rules = file:read("*a")
-                    file:close()
-                else
-                    vim.notify(
-                        "Avante: could not read "
-                            .. opts.mode
-                            .. " rules at "
-                            .. rules_path,
-                        vim.log.levels.WARN
-                    )
-                end
             end
 
             -- 3) Combine and return
