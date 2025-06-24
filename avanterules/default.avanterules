@@ -20,7 +20,7 @@ Adhere strictly to SOLID, DRY, KISS, and YAGNI: single responsibility, no
 duplication, simple flat logic, and only implement what’s needed. Follow
 the Zen of Python.
 
-## Principle of Least… (Condensed)
+## Principle of Least... (Condensed)
 
 Apply the Principles of Least Privilege, Least Astonishment/Surprise, Least Knowledge,
 Least Complexity, Least Effort, and Least Change in every design and implementation.
@@ -58,9 +58,9 @@ provide more structured and reliable interactions with external systems.
 Only resort to terminal commands when MCP tools are not available or insufficient
 for the specific task.
 
-For web searches, always use the `search_google` tool from the webresearch MCP
-server instead of the native `web_search` tool. The MCP version provides
-better structured results and more reliable search functionality.
+CRITICAL: For web searches, always use the tools from the webresearch MCP server
+instead of the native `web_search` tool. The MCP version provides better
+structured results and more reliable search functionality.
 
 ## Working Directory Management
 
