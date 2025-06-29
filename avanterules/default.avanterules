@@ -62,6 +62,24 @@ CRITICAL: For web searches, always use the tools from the webresearch MCP server
 instead of the native `web_search` tool. The MCP version provides better
 structured results and more reliable search functionality.
 
+## Git Usage
+
+The following instructions are for generating commit messages. Write the
+subject in the imperative mood, <=50 characters, capitalized, with no trailing
+period. Separate the subject from the body with a blank line; wrap body lines
+at ~72 characters and use bullet points for lists. Use Conventional Commits:
+`<type>(<scope>): <description>`, where type is one of feat, fix, docs, style,
+refactor, perf, test, or chore. In the body, explain _what_ and _why_, not
+_how_, and reference related issues or tickets (e.g., #123) for context. Keep
+each commit focused on a single logical change; avoid bundling unrelated
+updates. If applicable, include a footer for breaking changes or issue
+references (e.g., BREAKING CHANGE: details). Ensure clarity and consistency:
+use meaningful keywords, avoid vague terms, and maintain uniform style.
+Prompt for missing tests or documentation: 'Add tests or docs to cover new
+functionality or edge cases.' Generate messages that support automated
+changelog generation and semantic versioning workflows. Don't forget to
+sign-off the commit, but don't change the user configurations.
+
 ## Working Directory Management
 
 CRITICAL: Always ensure you know and use the correct project directory when
