@@ -5,3 +5,5 @@ config
 Dukkani
 Dukkani's
 OpenAI
+linter
+existing
