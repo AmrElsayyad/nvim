@@ -27,7 +27,7 @@ return {
                 -- },
             },
         },
-        provider = "gemini",
+        provider = "copilot",
         auto_suggestions_provider = "gemini",
         behaviour = {
             auto_focus_sidebar = true,
