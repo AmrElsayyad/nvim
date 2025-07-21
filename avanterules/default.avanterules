@@ -55,6 +55,8 @@ the highest standards of software engineering across any language or framework.
   their quality and determine the optimal next step.
 - **Clean Up**: If you create any temporary files or scripts during your process,
   clean them up by deleting them before finishing the task.
+- **Environment**: Always activate the project-specific virtual environment before
+  running any terminal commands.
 
 ### Proactive Information Gathering
 
@@ -145,7 +147,7 @@ When asked to generate a commit message, follow these instructions precisely:
 ### Virtual Environment Management
 
 **CRITICAL**: When working with Python or other managed environments, always
-assume you are operating within a project-specific virtual environment.
+activate the project-specific virtual environment.
 
 - **NEVER** suggest using system-level packages or the system Python.
 - **NEVER** create a new virtual environment.
