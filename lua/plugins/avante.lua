@@ -26,8 +26,14 @@ return {
                 --     },
                 -- },
             },
+            openrouter = {
+                __inherited_from = "openai",
+                endpoint = "https://openrouter.ai/api/v1",
+                model = "google/gemini-2.0-flash-exp:free",
+                api_key_name = "OPENROUTER_API_KEY",
+            },
         },
-        provider = "copilot",
+        provider = "openrouter",
         auto_suggestions_provider = "gemini",
         behaviour = {
             auto_focus_sidebar = true,
