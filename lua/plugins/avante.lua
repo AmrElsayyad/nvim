@@ -29,11 +29,11 @@ return {
             openrouter = {
                 __inherited_from = "openai",
                 endpoint = "https://openrouter.ai/api/v1",
-                model = "google/gemini-2.0-flash-exp:free",
+                model = "deepseek/deepseek-chat-v3-0324:free",
                 api_key_name = "OPENROUTER_API_KEY",
             },
         },
-        provider = "openrouter",
+        provider = "gemini",
         auto_suggestions_provider = "gemini",
         behaviour = {
             auto_focus_sidebar = true,
