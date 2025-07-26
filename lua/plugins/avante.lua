@@ -39,7 +39,7 @@ return {
                 api_key_name = "OPENROUTER_API_KEY",
             },
         },
-        provider = "huggingface",
+        provider = "gemini",
         auto_suggestions_provider = "gemini",
         behaviour = {
             auto_focus_sidebar = true,
