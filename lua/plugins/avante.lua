@@ -15,6 +15,12 @@ return {
                 model = "gemini-2.0-flash-001",
                 disable_tools = false,
             },
+            huggingface = {
+                __inherited_from = "openai",
+                endpoint = "https://router.huggingface.co/v1",
+                model = "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+                api_key_name = "HF_TOKEN",
+            },
             ollama = {
                 host = "http://localhost:11434",
                 model = "deepseek-r1:latest",
@@ -33,7 +39,7 @@ return {
                 api_key_name = "OPENROUTER_API_KEY",
             },
         },
-        provider = "gemini",
+        provider = "huggingface",
         auto_suggestions_provider = "gemini",
         behaviour = {
             auto_focus_sidebar = true,
