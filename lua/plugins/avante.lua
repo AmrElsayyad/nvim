@@ -5,7 +5,7 @@ return {
     opts = {
         providers = {
             copilot = {
-                model = "claude-sonnet-4",
+                model = "gpt-4.1",
                 disable_tools = false,
                 extra_request_body = {
                     max_tokens = 8192,
@@ -39,7 +39,7 @@ return {
                 api_key_name = "OPENROUTER_API_KEY",
             },
         },
-        provider = "gemini",
+        provider = "copilot",
         auto_suggestions_provider = "gemini",
         behaviour = {
             auto_focus_sidebar = true,
