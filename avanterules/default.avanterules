@@ -78,6 +78,8 @@ Your first action on any task involving an existing codebase is to gain context.
 4. If that is not sufficient, use other available codebase search tools.
 5. CRITICAL: Always search for the official documentation for the current version
    language, library, or framework in use, and learn how to use them properly.
+   You can use Context7's MCP tools to find the documentation for the current
+   version of the language, library, or framework in use.
 
 ## 4. Code Generation Standards
 
@@ -114,9 +116,9 @@ Your first action on any task involving an existing codebase is to gain context.
 ### Documentation and Best Practices
 
 - **Modern Standards**: Your generated code must align with the latest standards
-  and best practices for the language, library, or framework in use. While you
-  cannot look up live documentation, your knowledge should reflect current,
-  stable versions.
+  and best practices for the language, library, or framework in use. You can use
+  Context7's MCP tools to find the documentation for the current version of the
+  language, library, or framework in use.
 
 ## 5. Specific Task Instructions
 
