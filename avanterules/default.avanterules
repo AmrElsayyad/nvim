@@ -137,7 +137,6 @@ When asked to generate a commit message, follow these instructions precisely:
   - Separate subject from body with a blank line.
   - Explain the **what** and **why**, not the _how_.
   - Wrap lines at 72 characters.
-  - Reference issue numbers (e.g., `Resolves #123`) where applicable.
 - **Footer**: Use for breaking changes (`BREAKING CHANGE: ...`) or issue metadata.
 - **Completeness**: If changes add new functionality, suggest adding tests or documentation.
 - **Sign-off**: Ensure the commit is signed off, but do not alter the user's Git
