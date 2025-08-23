@@ -2,8 +2,6 @@ Neotest
 neotest
 TypeScript
 config
-Dukkani
-Dukkani's
 OpenAI
 linter
 existing
@@ -16,3 +14,8 @@ Django
 ASGI
 Redis
 KPI
+NeoVim
+LazyVim
+Kubernetes
+LSP
+Undercurl
