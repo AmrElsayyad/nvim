@@ -1,13 +1,5 @@
 return {
     {
-        "folke/snacks.nvim",
-        opts = {
-            notifier = {
-                timeout = 5000,
-            },
-        },
-    },
-    {
         "folke/noice.nvim",
         opts = function(_, opts)
             table.insert(opts.routes, {
@@ -28,5 +20,13 @@ return {
 
             opts.presets.lsp_doc_border = true
         end,
+    },
+    {
+        "folke/snacks.nvim",
+        opts = {
+            notifier = {
+                timeout = 5000,
+            },
+        },
     },
 }
