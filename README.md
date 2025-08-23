@@ -38,6 +38,11 @@ This configuration is highly customized. Here are some of the key customizations
 
 - **Keymaps:**
   - `+` and `-` are mapped to increment and decrement numbers.
+  - Debug Adapter Protocol (DAP) keymaps:
+    - `<down>`: Step over
+    - `<right>`: Step into
+    - `<left>`: Step out
+    - `<up>`: Restart debugger
 - **Options:**
   - Undercurl is enabled for better syntax highlighting.
 - **Plugins:**
