@@ -3,6 +3,20 @@
 -- Add any additional keymaps here
 local keymap = vim.keymap
 
+-- Telescope
+keymap.set(
+    "n",
+    "<leader><space>",
+    LazyVim.pick("files", { root = false }),
+    { desc = "Find Files (cwd)" }
+)
+keymap.set(
+    "n",
+    "<leader>/",
+    LazyVim.pick("live_grep", { root = false }),
+    { desc = "Grep (cwd)" }
+)
+
 -- Increment/decrement number
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")

@@ -37,12 +37,17 @@ The first time you open NeoVim, `lazy.nvim` will automatically install all the p
 This configuration is highly customized. Here are some of the key customizations:
 
 - **Keymaps:**
-  - `+` and `-` are mapped to increment and decrement numbers.
-  - Debug Adapter Protocol (DAP) keymaps:
-    - `<down>`: Step over
-    - `<right>`: Step into
-    - `<left>`: Step out
-    - `<up>`: Restart debugger
+  - **Telescope**:
+    - `<leader><space>` (normal mode): Find Files (cwd)
+    - `<leader>/` (normal mode): Grep (cwd)
+  - **Increment/Decrement Number**:
+    - `+` (normal mode): Increment number under cursor
+    - `-` (normal mode): Decrement number under cursor
+  - **Debug Adapter Protocol (DAP):**
+    - `<down>` (normal mode): Step over
+    - `<right>` (normal mode): Step into
+    - `<left>` (normal mode): Step out
+    - `<up>` (normal mode): Restart debugger
 - **Options:**
   - Undercurl is enabled for better syntax highlighting.
 - **Plugins:**
