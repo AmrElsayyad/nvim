@@ -68,8 +68,8 @@ return {
 
             -- 2) Load default rules
             local rules = ""
-            local rules_path =
-                vim.fn.expand("~/.config/nvim/avanterules/default.avanterules")
+            local rules_path = vim.fn.stdpath("config")
+                .. "/avanterules/default.avanterules"
             local file = io.open(rules_path, "r")
             if file then
                 rules = file:read("*a")
