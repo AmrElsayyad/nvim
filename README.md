@@ -21,13 +21,14 @@ note-taking with Obsidian.
 This configuration includes a wide range of plugins to enhance the NeoVim
 experience. Here are some of the key features:
 
+- **Disabled Plugin:** The [mini.pairs](https://github.com/nvim-mini/mini.pairs) plugin is explicitly disabled to avoid automatic pair insertion.
 - **Plugin Management:** Uses [lazy.nvim](https://github.com/folke/lazy.nvim) for fast and easy plugin management.
 - **Completion:** Powered by [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) with sources for LSP, snippets, buffer, and path.
 - **Code Formatting:** Integrates [conform.nvim](https://github.com/stevearc/conform.nvim) for automatic code formatting on save, with support for various languages.
 - **LSP:** Enhanced LSP UI with [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim).
 - **UI:** A beautiful and functional UI with [noice.nvim](https://github.com/folke/noice.nvim) and a custom dashboard with [alpha-nvim](https://github.com/goolord/alpha-nvim).
 - **Kubernetes:** Manage Kubernetes resources directly from NeoVim with [kubectl.nvim](https://github.com/piersolenski/kubectl.nvim).
-- **Note-taking:** Seamless integration with [Obsidian](https://obsidian.md/) using [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim).
+- **Note-taking:** Seamless integration with [Obsidian](https://obsidian.md/) using [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim).
 - **Code Coverage:** Visualize code coverage reports with [nvim-coverage](https://github.com/andythigpen/nvim-coverage.lua).
 - **Time Tracking:** Track your coding activity with [WakaTime](https://wakatime.com/).
 - **AI-powered Completion:** Supercharge your coding with [Supermaven](https://supermaven.com/) and [Avante.nvim](https://github.com/yetone/avante.nvim).
