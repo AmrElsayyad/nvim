@@ -1,8 +1,8 @@
 return {
     "saghen/blink.cmp", -- Completion plugin
     opts = function(_, opts)
-        -- Disable completion by default for each buffer
-        vim.b.completion = false
+        -- Enable completion by default for each buffer
+        vim.b.completion = true
 
         -- Register a toggle (via Snacks) for enabling/disabling completion
         -- The toggle stores its state in vim.b.completion and can be toggled with <leader>uk
