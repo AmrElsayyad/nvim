@@ -21,17 +21,29 @@ note-taking with Obsidian.
 This configuration includes a wide range of plugins to enhance the NeoVim
 experience. Here are some of the key features:
 
-- **Plugin Management:** Uses [lazy.nvim](https://github.com/folke/lazy.nvim) for fast and easy plugin management.
-- **Completion:** Powered by [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) with sources for LSP, snippets, buffer, and path.
-- **Code Formatting:** Integrates [conform.nvim](https://github.com/stevearc/conform.nvim) for automatic code formatting on save, with support for various languages.
+- **Plugin Management:** Uses [lazy.nvim](https://github.com/folke/lazy.nvim)
+  for fast and easy plugin management.
+- **Completion:** Powered by [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+  and [blink.cmp](https://github.com/saghen/blink.cmp) with sources for LSP,
+  snippets, buffer, and path. Completion is enabled or disabled globally for
+  all buffers via a session-wide toggle (\<leader\>uk).
+- **Code Formatting:** Integrates
+  [conform.nvim](https://github.com/stevearc/conform.nvim) for automatic code
+  formatting on save, with support for various languages.
 - **LSP:** Enhanced LSP UI with [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim).
-- **UI:** A beautiful and functional UI with [noice.nvim](https://github.com/folke/noice.nvim) and a custom dashboard with [alpha-nvim](https://github.com/goolord/alpha-nvim).
+- **UI:** A beautiful and functional UI with
+  [noice.nvim](https://github.com/folke/noice.nvim) and a custom dashboard
+  with [alpha-nvim](https://github.com/goolord/alpha-nvim).
 - **Kubernetes:** Manage Kubernetes resources directly from NeoVim with [kubectl.nvim](https://github.com/piersolenski/kubectl.nvim).
-- **Database Management:** Use [nvim-dbee](https://github.com/kndndrj/nvim-dbee) for interactive database connections, query execution, and management inside NeoVim.
-- **Note-taking:** Seamless integration with [Obsidian](https://obsidian.md/) using [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim).
+- **Database Management:** Use
+  [nvim-dbee](https://github.com/kndndrj/nvim-dbee) for interactive database
+  connections, query execution, and management inside NeoVim.
+- **Note-taking:** Seamless integration with [Obsidian](https://obsidian.md/)
+  using [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim).
 - **Code Coverage:** Visualize code coverage reports with [nvim-coverage](https://github.com/andythigpen/nvim-coverage.lua).
 - **Time Tracking:** Track your coding activity with [WakaTime](https://wakatime.com/).
-- **AI-powered Completion:** Supercharge your coding with [Supermaven](https://supermaven.com/) and [Avante.nvim](https://github.com/yetone/avante.nvim).
+- **AI-powered Completion:** Supercharge your coding with
+  [Supermaven](https://supermaven.com/) and [Avante.nvim](https://github.com/yetone/avante.nvim).
 
 ## LazyVim Extras
 
@@ -41,14 +53,16 @@ This configuration includes the following LazyVim extras:
 - **DAP:** `core`
 - **Editor:** `dial`, `inc-rename`, `mini-files`
 - **Formatting:** `prettier`
-- **Languages:** `angular`, `clangd`, `docker`, `java`, `json`, `markdown`, `python`, `rust`, `sql`, `toml`, `typescript`, `yaml`
+- **Languages:** `angular`, `clangd`, `docker`, `java`, `json`, `markdown`,
+  `python`, `rust`, `sql`, `toml`, `typescript`, `yaml`
 - **Linting:** `eslint`
 - **Testing:** `core`
 - **Utilities:** `dot`, `mini-hipatterns`
 
 ## AI Providers
 
-This configuration uses `avante.nvim` for AI-powered code generation and completion, with the following providers configured:
+This configuration uses `avante.nvim` for AI-powered code generation and
+completion, with the following providers configured:
 
 - `copilot`
 - `gemini`
@@ -71,9 +85,19 @@ The first time you open NeoVim, `lazy.nvim` will automatically install all the p
 
 This configuration is highly customizable. Here's how you can customize it:
 
+### Completion Toggle (Global)
+
+Completion can be enabled or disabled globally for your entire session. Use
+`<leader>uk` to toggle completion on or off. This sets the global variable
+`vim.g.completion`, which controls whether completion features are active in all
+buffers.
+
 ### Adding New Plugins
 
-To add a new plugin, simply create a new Lua file in the `lua/plugins` directory with the plugin's specification. For example, to add a plugin called `my-plugin`, you would create a file called `lua/plugins/my-plugin.lua` with the following content:
+To add a new plugin, simply create a new Lua file in the `lua/plugins`
+directory with the plugin's specification. For example, to add a plugin called
+`my-plugin`, you would create a file called `lua/plugins/my-plugin.lua` with
+the following content:
 
 ```lua
 return {
@@ -84,11 +108,15 @@ return {
 
 ### Overriding Existing Plugins
 
-You can override the default configuration of any plugin by creating a file with the same name in the `lua/plugins` directory. For example, to override the default configuration for the `nvim-cmp` plugin, you would create a file called `lua/plugins/cmp.lua` and add your custom configuration there.
+You can override the default configuration of any plugin by creating a file
+with the same name in the `lua/plugins` directory. For example, to override
+the default configuration for the `nvim-cmp` plugin, you would create a file
+called `lua/plugins/cmp.lua` and add your custom configuration there.
 
 ### Keymaps
 
-Custom keymaps are defined in the `lua/config/keymaps.lua` file. You can add your own keymaps to this file.
+Custom keymaps are defined in the `lua/config/keymaps.lua` file. You can add
+your own keymaps to this file.
 
 - **Telescope**:
   - `<leader><space>` (normal mode): Find Files (cwd)
@@ -106,7 +134,8 @@ Custom keymaps are defined in the `lua/config/keymaps.lua` file. You can add you
 
 ### Options
 
-Custom options are defined in the `lua/config/options.lua` file. You can add your own options to this file.
+Custom options are defined in the `lua/config/options.lua` file. You can add
+your own options to this file.
 
 ## Performance
 
