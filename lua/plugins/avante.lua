@@ -5,6 +5,7 @@ return {
     opts = {
         providers = {
             copilot = {
+                endpoint = "https://api.githubcopilot.com",
                 model = "gpt-4.1",
                 disable_tools = false,
                 extra_request_body = {
@@ -40,10 +41,10 @@ return {
             },
         },
         provider = "copilot",
-        auto_suggestions_provider = "gemini",
+        auto_suggestions_provider = "copilot",
         behaviour = {
             auto_focus_sidebar = true,
-            auto_suggestions = false, -- Experimental stage
+            auto_suggestions = true,
             auto_suggestions_respect_ignore = true,
             auto_set_highlight_group = true,
             auto_set_keymaps = true,
@@ -60,6 +61,48 @@ return {
         },
         suggestion = {
             debounce = 300,
+        },
+        mappings = {
+            --- @class AvanteConflictMappings
+            diff = {
+                ours = "co",
+                theirs = "ct",
+                all_theirs = "ca",
+                both = "cb",
+                cursor = "cc",
+                next = "]x",
+                prev = "[x",
+            },
+            suggestion = {
+                accept = "<M-l>",
+                next = "<M-]>",
+                prev = "<M-[>",
+                dismiss = "<C-]>",
+            },
+            jump = {
+                next = "]]",
+                prev = "[[",
+            },
+            submit = {
+                normal = "<CR>",
+                insert = "<C-s>",
+            },
+            cancel = {
+                normal = { "<C-c>", "<Esc>", "q" },
+                insert = { "<C-c>" },
+            },
+            sidebar = {
+                apply_all = "A",
+                apply_cursor = "a",
+                retry_user_request = "r",
+                edit_user_request = "e",
+                switch_windows = "<Tab>",
+                reverse_switch_windows = "<S-Tab>",
+                remove_file = "d",
+                add_file = "@",
+                close = { "<Esc>", "q" },
+                close_from_input = nil, -- e.g., { normal = "<Esc>", insert = "<C-d>" }
+            },
         },
         system_prompt = function()
             -- 1) Get your MCP hub prompt
