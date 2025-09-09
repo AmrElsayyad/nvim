@@ -30,7 +30,9 @@ experience. Here are some of the key features:
 - **Code Formatting:** Integrates
   [conform.nvim](https://github.com/stevearc/conform.nvim) for automatic code
   formatting on save, with support for various languages.
-- **LSP:** Enhanced LSP UI with [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim).
+- **LSP:** Enhanced LSP UI with
+  [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim), also filtering
+  diagnostics for `.env` files for a cleaner development experience.
 - **UI:** A beautiful and functional UI with
   [noice.nvim](https://github.com/folke/noice.nvim) and a custom dashboard
   with [alpha-nvim](https://github.com/goolord/alpha-nvim).
@@ -61,8 +63,14 @@ This configuration includes the following LazyVim extras:
 
 ## AI Providers
 
-This configuration uses `avante.nvim` for AI-powered code generation and
-completion, with the following providers configured:
+This configuration uses `avante.nvim` for AI-powered code generation and completion.
+
+**Note:** By default, Avante.nvim's auto suggestions are disabled in this
+configuration (see `lua/plugins/avante.lua`) in favor of the faster Supermaven
+auto suggestions. If you prefer Avante.nvim inline suggestions, set
+`auto_suggestions = true` in the Avante.nvim plugin options.
+
+The following AI completion providers are configured:
 
 - `copilot`
 - `gemini`
@@ -72,14 +80,22 @@ completion, with the following providers configured:
 
 ## Getting Started
 
-To use this configuration, you'll need to have NeoVim v0.8.0+ installed. Then,
-you can clone this repository to your `~/.config/nvim` directory:
+To get started with this configuration:
 
-```bash
-git clone https://github.com/AmrElsayyad/nvim.git ~/.config/nvim
-```
+1. **Ensure you have NeoVim v0.9+ installed** (check with `nvim --version`).
+2. **Clone this repository** to your `~/.config/nvim` directory:
 
-The first time you open NeoVim, `lazy.nvim` will automatically install all the plugins.
+   ```bash
+   git clone https://github.com/AmrElsayyad/nvim.git ~/.config/nvim
+   ```
+
+3. **Open NeoVim**. The first launch will trigger plugin installation via
+   `lazy.nvim`. Follow any prompts that appear to complete setup.
+4. **Recommended:** Install a Nerd Font for full icon support. Visit [Nerd
+   Fonts](https://www.nerdfonts.com/) for instructions.
+
+Optional: For advanced AI features, set up provider credentials as documented
+in `avante.nvim` and related plugins.
 
 ## Customization
 
