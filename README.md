@@ -23,29 +23,37 @@ experience. Here are some of the key features:
 
 - **Plugin Management:** Uses [lazy.nvim](https://github.com/folke/lazy.nvim)
   for fast and easy plugin management.
-- **Completion:** Powered by [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-  and [blink.cmp](https://github.com/saghen/blink.cmp) with sources for LSP,
-  snippets, buffer, and path. Completion is enabled or disabled globally for
-  all buffers via a session-wide toggle (\<leader\>uk).
+- **Completion:** Powered by [blink.cmp](https://github.com/saghen/blink.cmp)
+  with sources for LSP, snippets, buffer, and path. Completion can be toggled
+  globally for all buffers via a session-wide toggle (`<leader>uk`).
 - **Code Formatting:** Integrates
   [conform.nvim](https://github.com/stevearc/conform.nvim) for automatic code
-  formatting on save, with support for various languages.
+  formatting on save, with support for various languages including ZSH with beautysh.
 - **LSP:** Enhanced LSP UI with
-  [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim), also filtering
+  [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim), filtering
   diagnostics for `.env` files for a cleaner development experience.
-- **UI:** A beautiful and functional UI with
-  [noice.nvim](https://github.com/folke/noice.nvim) and a custom dashboard
-  with [alpha-nvim](https://github.com/goolord/alpha-nvim).
-- **Kubernetes:** Manage Kubernetes resources directly from NeoVim with [kubectl.nvim](https://github.com/piersolenski/kubectl.nvim).
+- **UI & Dashboard:** Beautiful and functional UI with
+  [noice.nvim](https://github.com/folke/noice.nvim) and a custom ASCII dashboard
+  powered by [snacks.nvim](https://github.com/folke/snacks.nvim).
+- **Kubernetes:** Manage Kubernetes resources directly from NeoVim with
+  [kubectl.nvim](https://github.com/Ramilito/kubectl.nvim).
 - **Database Management:** Use
   [nvim-dbee](https://github.com/kndndrj/nvim-dbee) for interactive database
   connections, query execution, and management inside NeoVim.
 - **Note-taking:** Seamless integration with [Obsidian](https://obsidian.md/)
-  using [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim).
+  using [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim) with custom
+  daily notes structure and templates.
 - **Code Coverage:** Visualize code coverage reports with [nvim-coverage](https://github.com/andythigpen/nvim-coverage.lua).
 - **Time Tracking:** Track your coding activity with [WakaTime](https://wakatime.com/).
 - **AI-powered Completion:** Supercharge your coding with
-  [Supermaven](https://supermaven.com/) and [Avante.nvim](https://github.com/yetone/avante.nvim).
+  [Supermaven](https://supermaven.com/) and [Avante.nvim](https://github.com/yetone/avante.nvim)
+  with MCP hub integration.
+- **MCP Integration:** Model Context Protocol support via
+  [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim) for enhanced AI capabilities.
+- **Window Management:** Smart window resizing with
+  [win-resizer.nvim](https://github.com/Kaiser-Yang/win-resizer.nvim).
+- **Whitespace Management:** Better whitespace handling with
+  [vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace).
 
 ## LazyVim Extras
 
@@ -82,7 +90,7 @@ The following AI completion providers are configured:
 
 To get started with this configuration:
 
-1. **Ensure you have NeoVim v0.9+ installed** (check with `nvim --version`).
+1. **Ensure you have NeoVim v0.11.2+ installed** (check with `nvim --version`).
 2. **Clone this repository** to your `~/.config/nvim` directory:
 
    ```bash

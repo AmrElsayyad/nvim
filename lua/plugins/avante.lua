@@ -6,7 +6,7 @@ return {
         providers = {
             copilot = {
                 endpoint = "https://api.githubcopilot.com",
-                model = "gpt-4.1",
+                model = "gpt-4o",
                 disable_tools = false,
                 extra_request_body = {
                     max_tokens = 8192,
@@ -24,7 +24,7 @@ return {
             },
             ollama = {
                 host = "http://localhost:11434",
-                model = "deepseek-r1:latest",
+                model = "qwen2.5-coder:3b",
                 disable_tools = false,
                 -- timeout = 3000,
                 -- extra_request_body = {
@@ -146,7 +146,7 @@ return {
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
         --- The below dependencies are optional,
-        "echasnovski/mini.pick", -- for file_selector provider mini.pick
+        "nvim-mini/mini.pick", -- for file_selector provider mini.pick
         "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
         "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
         "ibhagwan/fzf-lua", -- for file_selector provider fzf
