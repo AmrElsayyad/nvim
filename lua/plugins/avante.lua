@@ -6,7 +6,7 @@ return {
         providers = {
             copilot = {
                 endpoint = "https://api.githubcopilot.com",
-                model = "gpt-4o",
+                model = "gpt-4.1",
                 disable_tools = false,
                 extra_request_body = {
                     max_tokens = 8192,
