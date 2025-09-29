@@ -12,9 +12,6 @@ note-taking with Obsidian.
 - [AI Providers](#ai-providers)
 - [Getting Started](#getting-started)
 - [Customization](#customization)
-- [Performance](#performance)
-- [Architecture](#architecture)
-- [Contributing](#contributing)
 
 ## Features
 
@@ -48,6 +45,10 @@ experience. Here are some of the key features:
 - **AI-powered Completion:** Supercharge your coding with
   [Supermaven](https://supermaven.com/) and [Avante.nvim](https://github.com/yetone/avante.nvim)
   with MCP hub integration.
+- **Sidekick.nvim:** Advanced AI-powered sidekick for chat, code review, and
+  workflow automation inside NeoVim, deeply integrated with Model Context
+  Protocol (MCP) for seamless AI-driven assistance
+  ([sidekick.nvim](https://github.com/ravitemer/sidekick.nvim)).
 - **MCP Integration:** Model Context Protocol support via
   [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim) for enhanced AI capabilities.
 - **Window Management:** Smart window resizing with
@@ -78,6 +79,14 @@ configuration (see `lua/plugins/avante.lua`) in favor of the faster Supermaven
 auto suggestions. If you prefer Avante.nvim inline suggestions, set
 `auto_suggestions = true` in the Avante.nvim plugin options.
 
+### Advanced: Custom Avante Rules and AI Integration
+
+You can customize Avante.nvim's behavior by editing the avanterules (system
+prompts and context rules) found in your configuration. See
+`lua/plugins/avante.lua` for the rules and instructions. Updating these
+enables personalized code suggestions, improved chat, and custom AI workflows.
+For best results, tailor rules to your workflow and preferred AI provider.
+
 The following AI completion providers are configured:
 
 - `copilot`
@@ -104,6 +113,24 @@ To get started with this configuration:
 
 Optional: For advanced AI features, set up provider credentials as documented
 in `avante.nvim` and related plugins.
+
+### MCP/mcphub Setup
+
+This configuration leverages the Model Context Protocol (MCP) via
+[mcphub.nvim](https://github.com/ravitemer/mcphub.nvim) to enable advanced AI
+features and plugin interoperability.
+
+**To enable MCP:**
+
+1. Ensure you have Python 3.8+ and the `pip` package manager installed.
+2. Open NeoVim and run `:MCPHub` to start the MCP server from within NeoVim,
+   or refer to the mcphub.nvim documentation for setup.
+3. Set up any required environment variables or API keys as instructed by
+   individual MCP-compatible plugins (such as Avante.nvim or Sidekick.nvim).
+4. Check the plugin's status with `:MCPStatus` in NeoVim.
+
+MCP enables seamless integration with AI (code completion, chat, context-aware
+actions) and enhances features such as Avante.nvim and Sidekick.nvim.
 
 ## Customization
 
@@ -161,20 +188,38 @@ your own keymaps to this file.
 Custom options are defined in the `lua/config/options.lua` file. You can add
 your own options to this file.
 
-## Performance
+## Troubleshooting & FAQ
 
-This configuration is designed to be fast and responsive. However, to further
-improve startup time, you can lazy-load some of the less frequently used plugins
-by setting `lazy = true` in their configuration files.
+### MCP Server Fails to Start
 
-## Architecture
+- Ensure you have Python 3.8+ and `pip` installed on your system.
+- Try running `:MCPHub` in NeoVim to start the server manually.
+- Check for errors in the NeoVim command line and address missing dependencies
+  as reported.
 
-This configuration follows the modular architecture of LazyVim. Each plugin is
-configured in its own file, making it easy to add, remove, or modify plugins
-without affecting the rest of the configuration.
+### Plugin Installation Issues
 
-## Contributing
+- Ensure you are running the latest NeoVim version (`nvim --version`).
+- Delete the `.local/share/nvim` plugin directory and restart NeoVim to
+  trigger a clean install.
+- Check your internet connection.
 
-This is a personal configuration, but feel free to fork it and customize it to
-your own needs. If you have any suggestions or find any issues, please open an
-issue on the GitHub repository.
+### Completion or AI Features Not Working
+
+- Make sure completion is enabled globally (`<leader>uk`).
+- Verify that required API keys or environment variables are set for your
+  chosen AI provider (see plugin docs for details).
+- Run `:MCPStatus` to check that MCP is running and all required plugins are loaded.
+
+### Customization Changes Not Taking Effect
+
+- Restart NeoVim after making changes to plugin or config files.
+- Run `:Lazy reload` to force a reload of the configuration.
+
+### General Debugging
+
+- Use `:messages` to view recent errors or warnings.
+- For more details, run NeoVim with increased verbosity: `nvim -V3logfile`.
+
+If your issue persists, check plugin documentation or open an issue in the
+GitHub repository.
