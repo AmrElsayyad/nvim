@@ -100,15 +100,16 @@ The following AI completion providers are configured:
 To get started with this configuration:
 
 1. **Ensure you have NeoVim v0.11.2+ installed** (check with `nvim --version`).
-2. **Clone this repository** to your `~/.config/nvim` directory:
+2. **Install Required Dependencies**: make, npm, mcp-hub, and tree-sitter-cli (preferably use cargo instead of npm to install tree-sitter-cli).
+3. **Clone this repository** to your `~/.config/nvim` directory:
 
    ```bash
    git clone https://github.com/AmrElsayyad/nvim.git ~/.config/nvim
    ```
 
-3. **Open NeoVim**. The first launch will trigger plugin installation via
+4. **Open NeoVim**. The first launch will trigger plugin installation via
    `lazy.nvim`. Follow any prompts that appear to complete setup.
-4. **Recommended:** Install a Nerd Font for full icon support. Visit [Nerd
+5. **Recommended:** Install a Nerd Font for full icon support. Visit [Nerd
    Fonts](https://www.nerdfonts.com/) for instructions.
 
 Optional: For advanced AI features, set up provider credentials as documented
