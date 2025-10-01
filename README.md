@@ -2,8 +2,7 @@
 
 This is my personal NeoVim configuration, built on top of the excellent
 [LazyVim](https://github.com/LazyVim/LazyVim) framework. It's tailored for web
-development (JavaScript, TypeScript, Python), Kubernetes development, and
-note-taking with Obsidian.
+development (JavaScript, TypeScript, Python), and note-taking with Obsidian.
 
 ## Table of Contents
 
@@ -32,8 +31,6 @@ experience. Here are some of the key features:
 - **UI & Dashboard:** Beautiful and functional UI with
   [noice.nvim](https://github.com/folke/noice.nvim) and a custom ASCII dashboard
   powered by [snacks.nvim](https://github.com/folke/snacks.nvim).
-- **Kubernetes:** Manage Kubernetes resources directly from NeoVim with
-  [kubectl.nvim](https://github.com/Ramilito/kubectl.nvim).
 - **Database Management:** Use
   [nvim-dbee](https://github.com/kndndrj/nvim-dbee) for interactive database
   connections, query execution, and management inside NeoVim.
@@ -100,7 +97,11 @@ The following AI completion providers are configured:
 To get started with this configuration:
 
 1. **Ensure you have NeoVim v0.11.2+ installed** (check with `nvim --version`).
-2. **Install Required Dependencies**: make, npm, mcp-hub, and tree-sitter-cli (preferably use cargo instead of npm to install tree-sitter-cli).
+2. **Install the Required Dependencies**:
+   [make](https://www.gnu.org/software/make/), [npm](https://www.npmjs.com/),
+   [mcp-hub](https://github.com/ravitemer/mcp-hub), and
+   [tree-sitter-cli](https://github.com/tree-sitter/tree-sitter/tree/master/crates/cli)
+   (preferably use cargo instead of npm to install tree-sitter-cli).
 3. **Clone this repository** to your `~/.config/nvim` directory:
 
    ```bash

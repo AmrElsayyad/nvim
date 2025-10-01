@@ -1,11 +1,10 @@
 return {
     "folke/sidekick.nvim",
-    event = "BufRead",
-    opts = {},
     keys = {
         {
             "<tab>",
             function()
+                -- if there is a next edit, jump to it, otherwise apply it if any
                 if not require("sidekick").nes_jump_or_apply() then
                     return "<Tab>" -- fallback to normal tab
                 end
@@ -13,37 +12,51 @@ return {
             expr = true,
             desc = "Goto/Apply Next Edit Suggestion",
         },
-    },
-    config = {
-        jump = {
-            jumplist = true, -- add an entry to the jumplist
-        },
-        signs = {
-            enabled = true, -- enable signs by default
-            icon = " ",
-        },
-        nes = {
-            enabled = function(buf)
-                return vim.g.sidekick_nes ~= false
-                    and vim.b.sidekick_nes ~= false
+        {
+            "<c-.>",
+            function()
+                require("sidekick.cli").focus()
             end,
-            debounce = 100,
-            trigger = {
-                -- events that trigger sidekick next edit suggestions
-                events = {
-                    "InsertLeave",
-                    "TextChanged",
-                    "User SidekickNesDone",
-                },
-            },
-            clear = {
-                -- events that clear the current next edit suggestion
-                events = { "TextChangedI", "BufWritePre", "InsertEnter" },
-                esc = true, -- clear next edit suggestions when pressing <Esc>
-            },
-            diff = {
-                inline = "words",
-            },
+            mode = { "n", "x", "i", "t" },
+            desc = "Sidekick Switch Focus",
+        },
+        {
+            "<leader>ka",
+            function()
+                require("sidekick.cli").toggle({ focus = true })
+            end,
+            desc = "Sidekick Toggle CLI",
+            mode = { "n", "v" },
+        },
+        {
+            "<leader>kc",
+            function()
+                require("sidekick.cli").toggle({
+                    name = "copilot",
+                    focus = true,
+                })
+            end,
+            desc = "Sidekick Copilot Toggle",
+            mode = { "n", "v" },
+        },
+        {
+            "<leader>kg",
+            function()
+                require("sidekick.cli").toggle({
+                    name = "gemini",
+                    focus = true,
+                })
+            end,
+            desc = "Sidekick Gemini Toggle",
+            mode = { "n", "v" },
+        },
+        {
+            "<leader>kp",
+            function()
+                require("sidekick.cli").select_prompt()
+            end,
+            desc = "Sidekick Ask Prompt",
+            mode = { "n", "v" },
         },
     },
 }
