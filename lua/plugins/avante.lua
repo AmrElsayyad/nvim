@@ -1,8 +1,18 @@
 return {
     "yetone/avante.nvim",
+    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+    -- ⚠️ must add this setting! ! !
+    build = vim.fn.has("win32") ~= 0
+            and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+        or "make",
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
+    ---@module 'avante'
+    ---@type avante.Config
     opts = {
+        -- add any opts here
+        -- this file can contain specific instructions for your project
+        instructions_file = "avante.md",
         providers = {
             copilot = {
                 endpoint = "https://api.githubcopilot.com",
@@ -43,21 +53,15 @@ return {
         provider = "copilot",
         auto_suggestions_provider = "copilot",
         behaviour = {
-            auto_focus_sidebar = true,
-            auto_suggestions = false,
-            auto_suggestions_respect_ignore = true,
+            auto_suggestions = false, -- Experimental stage
             auto_set_highlight_group = true,
             auto_set_keymaps = true,
             auto_apply_diff_after_generation = true,
-            jump_result_buffer_on_finish = false,
             support_paste_from_clipboard = false,
-            minimize_diff = true,
-            enable_token_counting = true,
-            use_cwd_as_project_root = true,
-            auto_focus_on_diff_view = false,
-            ---@type boolean | string[] -- true: auto-approve all tools, false: normal prompts, string[]: auto-approve specific tools by name
-            auto_approve_tool_permissions = false, -- Default: show permission prompts for all tools
-            auto_check_diagnostics = true,
+            minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
+            enable_token_counting = true, -- Whether to enable token counting. Default to true.
+            auto_add_current_file = true, -- Whether to automatically add the current file when opening a new chat. Default to true.
+            auto_approve_tool_permissions = true, -- Default: auto-approve all tools (no prompts)
         },
         suggestion = {
             debounce = 300,
@@ -137,12 +141,7 @@ return {
             }
         end,
     },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = "make",
-    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
     dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "stevearc/dressing.nvim",
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
         --- The below dependencies are optional,
@@ -150,9 +149,10 @@ return {
         "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
         "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
         "ibhagwan/fzf-lua", -- for file_selector provider fzf
+        "stevearc/dressing.nvim", -- for input provider dressing
+        "folke/snacks.nvim", -- for input provider snacks
         "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
         "zbirenbaum/copilot.lua", -- for providers='copilot'
-        "MeanderingProgrammer/mcphub.nvim", -- for Motion Canvas Project integration
         {
             -- support for image pasting
             "HakonHarnes/img-clip.nvim",

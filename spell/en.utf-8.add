@@ -7,6 +7,7 @@ KPIs
 Kubernetes
 LSP
 LazyVim
+MCP
 MinIO
 NeoVim
 Neotest
@@ -17,6 +18,7 @@ TypeScript
 Undercurl
 WebSocket
 WebSockets
+YAGNI
 backend
 config
 frontend
