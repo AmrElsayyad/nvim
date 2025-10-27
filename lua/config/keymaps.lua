@@ -3,6 +3,10 @@
 -- Add any additional keymaps here
 local keymap = vim.keymap
 
+-- Move buffer line left/right
+keymap.set("n", "<A-h>", "<cmd>BufferLineMovePrev<CR>")
+keymap.set("n", "<A-l>", "<cmd>BufferLineMoveNext<CR>")
+
 -- Telescope
 keymap.set(
     "n",

@@ -185,6 +185,10 @@ your own keymaps to this file.
 - **nvim-dbee**:
   - `<leader>D` (normal mode): Launch nvim-dbee for database management
 
+- **Buffer Movement**:
+  - `<A-h>` (normal mode): Move buffer line left
+  - `<A-l>` (normal mode): Move buffer line right
+
 ### Options
 
 Custom options are defined in the `lua/config/options.lua` file. You can add
