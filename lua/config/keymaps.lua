@@ -37,6 +37,15 @@ wk.add({
     { "<leader>D", ":Dbee<CR>", desc = "Launch nvim-dbee", icon = "󰆼" },
 })
 
+-- Avante Clear Todos
+wk.add({
+    {
+        "<leader>aD",
+        ":lua require('avante').get():update_todos({})<CR>",
+        desc = "avante: clear Todos",
+    },
+})
+
 -- Better window resizing
 local resize = require("win.resizer").resize
 local map_set = vim.keymap.set
@@ -57,13 +66,6 @@ local abs_delta = 3
 -- Choose your favorite key mappings
 -- Keys in border_to_key will try first_left_or_right or first_top_or_bottom first
 local border_to_key = {
-    top = "<up>",
-    bottom = "<down>",
-    left = "<left>",
-    right = "<right>",
-}
--- Keys in border_to_reverse_key will try second_left_or_right or second_top_or_bottom first
-local border_to_reverse_key = {
     top = "<s-up>",
     bottom = "<s-down>",
     left = "<s-left>",
@@ -85,17 +87,10 @@ for _, border in pairs({ "top", "bottom", "left", "right" }) do
     local second = first == first_left_or_right and second_left_or_right
         or second_top_or_bottom
     local desc = "Smart resize " .. first .. " " .. border
-    local desc_reverse = "Smart resize " .. second .. " " .. border
     map_set({ "n" }, border_to_key[border], function()
         local _ = resize(0, first, delta, true)
             or resize(0, second, -delta, true)
             or resize(0, first, delta, false)
             or resize(0, second, -delta, false)
     end, { desc = desc })
-    map_set({ "n" }, border_to_reverse_key[border], function()
-        local _ = resize(0, second, -delta, true)
-            or resize(0, first, delta, true)
-            or resize(0, second, -delta, false)
-            or resize(0, first, delta, false)
-    end, { desc = desc_reverse })
 end

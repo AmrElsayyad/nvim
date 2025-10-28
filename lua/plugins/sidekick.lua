@@ -12,6 +12,13 @@ return {
                     cmd = { "ccr", "code" },
                 },
             },
+            win = {
+                layout = "right",
+                split = {
+                    width = 0.5,
+                    height = 0.5,
+                },
+            },
         },
     },
     keys = {

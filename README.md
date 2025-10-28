@@ -174,20 +174,32 @@ your own keymaps to this file.
 - **Telescope**:
   - `<leader><space>` (normal mode): Find Files (cwd)
   - `<leader>/` (normal mode): Grep (cwd)
+
 - **Increment/Decrement Number**:
   - `+` (normal mode): Increment number under cursor
   - `-` (normal mode): Decrement number under cursor
+
+- **Buffer Movement**:
+  - `<A-h>` (normal mode): Move buffer line left (BufferLineMovePrev)
+  - `<A-l>` (normal mode): Move buffer line right (BufferLineMoveNext)
+
+- **Smart Window Resizing**:
+  - `<s-up>` (normal mode): Resize window up
+  - `<s-down>` (normal mode): Resize window down
+  - `<s-left>` (normal mode): Resize window left
+  - `<s-right>` (normal mode): Resize window right
+
 - **Debug Adapter Protocol (DAP):**
   - `<down>` (normal mode): Step over
   - `<right>` (normal mode): Step into
   - `<left>` (normal mode): Step out
   - `<up>` (normal mode): Restart debugger
+
 - **nvim-dbee**:
   - `<leader>D` (normal mode): Launch nvim-dbee for database management
 
-- **Buffer Movement**:
-  - `<A-h>` (normal mode): Move buffer line left
-  - `<A-l>` (normal mode): Move buffer line right
+- **Avante.nvim Todos**:
+  - `<leader>aD` (normal mode): Clear Avante Todos
 
 ### Options
 
