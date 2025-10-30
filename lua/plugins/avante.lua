@@ -16,7 +16,7 @@ return {
         providers = {
             copilot = {
                 endpoint = "https://api.githubcopilot.com",
-                model = "gpt-4.1",
+                model = "gpt-5-mini",
                 disable_tools = false,
                 extra_request_body = {
                     max_tokens = 8192,
@@ -34,7 +34,7 @@ return {
             },
             ollama = {
                 host = "http://localhost:11434",
-                model = "qwen2.5-coder:3b",
+                model = "deepseek-coder:6.7b",
                 disable_tools = false,
                 -- timeout = 3000,
                 -- extra_request_body = {
