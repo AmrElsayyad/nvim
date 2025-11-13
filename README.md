@@ -50,6 +50,8 @@ experience. Here are some of the key features:
   [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim) for enhanced AI capabilities.
 - **Window Management:** Smart window resizing with
   [win-resizer.nvim](https://github.com/Kaiser-Yang/win-resizer.nvim).
+- **Remote Development:** Seamless remote development with
+  [remote-ssh.nvim](https://github.com/linrongbin16/remote-ssh.nvim).
 - **Whitespace Management:** Better whitespace handling with
   [vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace).
 
@@ -59,13 +61,13 @@ This configuration includes the following LazyVim extras:
 
 - **Coding:** `mini-surround`, `yanky` _(Note: `mini.pairs` is disabled)_
 - **DAP:** `core`
-- **Editor:** `dial`, `inc-rename`, `mini-files`
+- **Editor:** `dial`, `mini-files`
 - **Formatting:** `prettier`
 - **Languages:** `angular`, `clangd`, `docker`, `java`, `json`, `markdown`,
   `python`, `rust`, `sql`, `toml`, `typescript`, `yaml`
 - **Linting:** `eslint`
 - **Testing:** `core`
-- **Utilities:** `dot`, `mini-hipatterns`
+- **Utilities:** `dot`, `mini-hipatterns`, `remote-ssh`
 
 ## AI Providers
 
@@ -233,6 +235,12 @@ your own options to this file.
 
 - Restart NeoVim after making changes to plugin or config files.
 - Run `:Lazy reload` to force a reload of the configuration.
+
+### Nested Configuration
+
+This repository contains a nested NeoVim configuration within the `nvim/`
+directory. This setup is specifically designed for use with the `remote-nvim`
+plugin, where it is copied to a remote server using `scp`.
 
 ### General Debugging
 
