@@ -6,6 +6,7 @@ EER
 JSON
 KPI
 KPIs
+Keycloak
 Kubernetes
 LSP
 LazyVim
@@ -26,3 +27,10 @@ config
 frontend
 linter
 neotest
+Liskov
+PostgreSQL
+WSGI
+Gunicorn
+Uvicorn
+pytest
+OpenAPI
