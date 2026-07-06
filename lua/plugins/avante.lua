@@ -34,7 +34,7 @@ return {
             },
             ollama = {
                 host = "http://localhost:11434",
-                model = "deepseek-coder:6.7b",
+                model = "qwen3.5:4b",
                 disable_tools = false,
                 -- timeout = 3000,
                 -- extra_request_body = {

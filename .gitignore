@@ -1,9 +1,10 @@
-tt.*
-.tests
-doc/tags
-debug
-.repro
-foo.*
 *.log
+.memsearch
+.repro
+.tests
 data
+debug
+doc/tags
+foo.*
 node_modules/
+tt.*
