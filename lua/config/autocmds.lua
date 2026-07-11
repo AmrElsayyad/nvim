@@ -7,8 +7,8 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
--- Disable Conceal by default
-vim.wo.conceallevel = 0
+-- Enable Conceal by default
+vim.wo.conceallevel = 1
 
 -- Enable Wrap by default
 vim.wo.wrap = true
