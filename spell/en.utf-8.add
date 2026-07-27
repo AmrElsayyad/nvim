@@ -12,6 +12,7 @@ Kubernetes
 LSP
 LazyVim
 Liskov
+Lua
 MCP
 MinIO
 NeoVim
@@ -34,4 +35,5 @@ config
 frontend
 linter
 neotest
+nvim
 pytest
